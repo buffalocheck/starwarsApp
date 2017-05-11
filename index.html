@@ -2,8 +2,7 @@
 <html ng-app="StarWarsApp">
 
 <head>
-    <meta charset="UTF-8">
-    <title>StarwarsApp</title>
+    <title>starwarsapp</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-resource.js"></script>
@@ -11,10 +10,8 @@
 </head>
 
 <body ng-controller="FilmsCtrl">
-    <h1>H1 here</h1>
-    <div class="well" ng-repeat="film in films">
-        <h2>{{ film.title }}</h2>
-        <p>{{ film.opening_crawl }}</p>
+    <h1>Filler Text</h1>
+    <div>
         <input type="integer" ng-model="movieId">
         <button ng-click="getMovie(movieId)">Get</button>
         <button ng-click="getAll()">All</button>
@@ -23,7 +20,7 @@
         Loading...
     </div>
     <div ng-if="!loading" ng-repeat="film in films">
-        <h1>{{film.title}}</h1>
+        <h2>{{film.title}}</h2>
         <p>{{film.opening_crawl}}</p>
     </div>
 </body>
