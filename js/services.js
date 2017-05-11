@@ -1,6 +1,6 @@
-angular.module("StarWarsServices", []);
+var services = angular.module("StarWarsServices", ["ngResource"]);
 
-app.factory('FilmsFactory', ['$resource', function($resource) {
+services.factory('FilmsFactory', ['$resource', function($resource) {
     var url = 'http://swapi.co/api/films/:id';
     return $resource(url, {}, {
         query: { isArray: false }

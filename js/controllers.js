@@ -1,7 +1,7 @@
-angular.model("starWarsCtrls", []);
+var controllers = angular.module("StarWarsCtrls", ["StarWarsServices"]);
 
 
-app.controller('FilmsCtrl', ['$scope', 'FilmsFactory', function($scope, FilmsFactory) {
+controllers.controller('HomeCtrl', ['$scope', 'FilmsFactory', function($scope, FilmsFactory) {
     // console.log('controller is connected');
     $scope.movieId = 1;
     $scope.films = [];
@@ -27,3 +27,11 @@ app.controller('FilmsCtrl', ['$scope', 'FilmsFactory', function($scope, FilmsFac
         });
     };
 }]);
+
+controllers.controller("FilmShowCtrl", ["$scope", "$stateParams", "FilmsFactory", function($scope, $stateParams, FilmsFactory) {
+    $scope.film = {};
+    FilmsFactory.get({ id: $stateParams.id }, function success(data) {
+        $scope.film = data;
+    })
+
+}])
